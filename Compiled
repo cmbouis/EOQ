@@ -1,0 +1,39 @@
+#EOQ Program
+
+#Use Classes and multiple functions with conditionals that will run the problem with different configurations of the formula based on the variables that are "given" (changed from letters).
+
+#Q = sqrt((2*K*D)/h)
+
+# Variables to be marked with "x" to indicate unknown variable
+
+# amount of items per order
+Q = "x"
+
+# fixed (setup) cost
+K = "x"
+
+# amount demanded items per day
+D = "x"
+
+# inventory carrying (holding) cost per unit
+h = "x"
+
+# importing math library
+import math
+
+#EOQ function defined
+def find_EOQ(Q, K, D, h):
+    if Q == "x":
+        EOQ = (math.sqrt((2*K*D)/h))
+    elif K == "x":
+        EOQ = ((h*Q**2)/(2*D))
+    elif D == "x":
+        EOQ = ((h*Q**2)/(2*K))
+    elif h == "x":
+        EOQ = ((K*D*2)/(Q**2))
+    else:
+        EOQ = "Error"
+    return print(EOQ)
+
+# calling find_EOQ function
+find_EOQ(Q, K, D, h)
